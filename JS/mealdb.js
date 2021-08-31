@@ -1,16 +1,20 @@
 document.getElementById('error-message').style.display = 'none';
-const searchFood = () => {
+const searchFood = async () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     // console.log(searchText);
 
     //clear Data
     searchField.value = '';
-    document.getElementById('error-message').style.display = 'none';
+
     if (searchText == '') {
+        document.getElementById('error-message').style.display = 'block';
 
     }
     else {
+
+        document.getElementById('error-message').style.display = 'none';
+        
         //load Data
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
